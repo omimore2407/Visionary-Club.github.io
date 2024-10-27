@@ -32,7 +32,7 @@ function App() {
                 <Helmet>
                     <meta charSet="UTF-8"/>
                     <title>Visionary Club</title>
-                    <link rel="icon" type="image" href="/assets/VISIONARY_CLUB.png"/>
+                    <link rel="icon" type="image" href="https://github.com/Visionary-Club/Visionary-Club.github.io/blob/main/src/assets/VISIONARY_CLUB.png"/>
                 </Helmet>
                 <div className="loading-circle"></div>
                 <div className="loading-text">INITIALIZING</div>
