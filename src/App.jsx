@@ -1,6 +1,7 @@
 // App.jsx
 import { useState, useEffect } from 'react';
 import './App.css';
+import {Helmet} from "react-helmet";
 
 function App() {
     const [email, setEmail] = useState('');
@@ -26,7 +27,13 @@ function App() {
 
     if (isLoading) {
         return (
+
             <div className="loading-screen">
+                <Helmet>
+                    <meta charSet="UTF-8"/>
+                    <title>Visionary Club</title>
+
+                </Helmet>
                 <div className="loading-circle"></div>
                 <div className="loading-text">INITIALIZING</div>
             </div>
@@ -35,6 +42,11 @@ function App() {
 
     return (
         <div className="app">
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>My Title</title>
+                <link rel="canonical" href="http://mysite.com/example" />
+            </Helmet>
             <div
                 className="background-gradient"
                 style={{
