@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import './App.css';
 import {Helmet} from "react-helmet";
+import Favicon from "react-favicon";
 
 function App() {
     const [email, setEmail] = useState('');
@@ -29,11 +30,12 @@ function App() {
         return (
 
             <div className="loading-screen">
+                <Favicon url="https://github.com/Visionary-Club/Visionary-Club.github.io/blob/main/src/assets/VISIONARY_CLUB.png"/>
+
                 <Helmet>
                     <meta charSet="UTF-8"/>
                     <title>Visionary Club</title>
-                    <link rel="icon" type="image/png" href="https://github.com/Visionary-Club/Visionary-Club.github.io/blob/main/src/assets/VISIONARY_CLUB.png"/>
-                </Helmet>
+                    </Helmet>
                 <div className="loading-circle"></div>
                 <div className="loading-text">INITIALIZING</div>
             </div>
@@ -42,10 +44,10 @@ function App() {
 
     return (
         <div className="app">
+            <Favicon url="https://github.com/Visionary-Club/Visionary-Club.github.io/blob/main/src/assets/VISIONARY_CLUB.png"/>
             <Helmet>
                 <meta charSet="UTF-8"/>
                 <title>Visionary Club</title>
-                <link rel="icon" type="image/png" href="https://github.com/Visionary-Club/Visionary-Club.github.io/blob/main/src/assets/VISIONARY_CLUB.png"/>
             </Helmet>
             <div
                 className="background-gradient"
