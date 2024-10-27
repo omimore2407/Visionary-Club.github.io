@@ -7,7 +7,7 @@
     "dev": "vite",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
-    "set-metadata": "node ./src/setMetadata.js",
+    "set-metadata": "node ./src/setMetadata.cjs",
     "build": "npm run set-metadata && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
