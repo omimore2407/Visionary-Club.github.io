@@ -43,9 +43,9 @@ function App() {
     return (
         <div className="app">
             <Helmet>
-                <meta charSet="utf-8" />
-                <title>My Title</title>
-                <link rel="canonical" href="http://mysite.com/example" />
+                <meta charSet="UTF-8"/>
+                <title>Visionary Club</title>
+
             </Helmet>
             <div
                 className="background-gradient"
