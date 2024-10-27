@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 // Path to index.html
-const filePath = path.join(__dirname, '../public/index.html');
+const filePath = path.join(__dirname, '../dist/index.html');
 
 // Read the file
 let fileContent = fs.readFileSync(filePath, 'utf-8');
