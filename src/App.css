@@ -389,6 +389,7 @@ button {
 @media (min-width: 769px) and (max-width: 1024px) {
   .content {
     padding: 1.5rem;
+    height: 100%;
   }
 
   .features-grid {
