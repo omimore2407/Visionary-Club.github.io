@@ -1,11 +1,13 @@
-// App.jsx
 import { useState, useEffect } from 'react';
+import { LoadingScreen } from './components/LoadingScreen/LoadingScreen';
+import { Header } from './components/Header/Header';
+import { HeroSection } from './components/HeroSection/HeroSection';
+import { Features } from './components/Features/Features';
+import { Footer } from './components/Footer/Footer';
+import {MetaTags} from "./components/MetaTags/MetaTags.jsx";
 import './App.css';
-import {Helmet} from "react-helmet";
-import Favicon from "react-favicon";
 
 function App() {
-    const [email, setEmail] = useState('');
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
     const [isLoading, setIsLoading] = useState(true);
 
@@ -18,85 +20,37 @@ function App() {
         };
 
         window.addEventListener('mousemove', handleMouseMove);
-
-        // Simulate loading
         setTimeout(() => setIsLoading(false), 2000);
 
         return () => window.removeEventListener('mousemove', handleMouseMove);
     }, []);
 
-
     if (isLoading) {
+
         return (
-
-            <div className="loading-screen">
-                <Favicon url="https://github.com/Visionary-Club/Visionary-Club.github.io/blob/main/src/assets/VISIONARY_CLUB.png"/>
-
-                <Helmet>
-                    <meta charSet="UTF-8"/>
-                    <title>Visionary Club</title>
-                    </Helmet>
-                <div className="loading-circle"></div>
-                <div className="loading-text">INITIALIZING</div>
-            </div>
-        );
+            <>
+                <MetaTags/>
+                <LoadingScreen/>
+            </>
+        )
+        ;
     }
 
     return (
         <div className="app">
-            <Favicon url="https://github.com/Visionary-Club/Visionary-Club.github.io/blob/main/src/assets/VISIONARY_CLUB.png"/>
-            <Helmet>
-                <meta charSet="UTF-8"/>
-                <title>Visionary Club</title>
-            </Helmet>
+            <MetaTags/>
             <div
                 className="background-gradient"
                 style={{
                     transform: `translate(${mousePosition.x}px, ${mousePosition.y}px)`,
                 }}
-            ></div>
-
-            <div className="glass-overlay"></div>
-
+            />
+            <div className="glass-overlay" />
             <main className="content">
-                <div className="header">
-                    <div className="logo-container">
-                        <div className="logo-circle"></div>
-                        <h1 className="logo-text">VISIONARY CLUB</h1>
-                    </div>
-                    <div className="status-bar">
-                        <span className="status-dot"></span>
-                        SYSTEM STATUS: LAUNCHING SOON
-                    </div>
-                </div>
-
-                <div className="hero-section">
-                    <h2 className="glitch-text">INITIALIZE FUTURE</h2>
-                    <p className="sub-text">Join the next generation of technology innovators</p>
-                </div>
-
-                <div className="features-grid">
-                    {[
-                        {title: 'AI/ML', icon: '🧠', description: 'Advanced Intelligence Systems'},
-                        {title: 'IoT', icon: '🌐', description: 'Connected Device Networks'},
-                        {title: 'CYBERSEC', icon: '🛡️', description: 'Security Protocol Development'}
-                    ].map((feature, index) => (
-                        <div key={index} className="feature-card">
-                            <div className="feature-icon">{feature.icon}</div>
-                            <h3>{feature.title}</h3>
-                            <p>{feature.description}</p>
-                            <div className="feature-glow"></div>
-                        </div>
-                    ))}
-                </div>
-
-
-
-                <div className="footer-dots">
-                    <div className="pulse-dot"></div>
-                    <div className="pulse-dot"></div>
-                    <div className="pulse-dot"></div>
-                </div>
+                <Header />
+                <HeroSection />
+                <Features />
+                <Footer />
             </main>
         </div>
     );
